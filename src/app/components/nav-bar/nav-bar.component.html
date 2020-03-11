@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom container d-flex flex-column align-items-start">
+    <div>
+    <a class="navbar-brand slogan" href="#">THEMOVIE<span class="font-weight-bold box">BOX</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+    <div class="collapse navbar-collapse d-flex justify-content-between w-100" id="navbarSupportedContent">
+        <div class="row justify-content-between w-100">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item mx-2" routerLinkActive="active">
+          <a class="nav-link" routerLink="/" >Treding <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item mx-2" routerLinkActive="active">
+          <a class="nav-link" routerLink="/top-rated">Top Rated</a>
+        </li>
+        <li class="nav-item dropdown mx-2 drop-hover">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Genre
+          </a>
+          <div class="drop-list" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item"
+            *ngFor="let item of genres"
+            [routerLink]="['/redirect']" [queryParams]="{id: item.id}" >{{ item.type }}</a>
+          </div>
+        </li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <input #boxSearch (keyup.enter)="getValue(boxSearch.value)" class="form-control mr-sm-2 rounded-0" type="search" placeholder="Search" aria-label="Search">
+        <!-- <a class="btn btn-outline-success btn-search rounded-0 my-2 my-sm-0" [routerLink]="[ '/redirect' ]" [queryParams]="{name: inputSearch}">Search</a> -->
+        <button  class="btn btn-outline-success btn-search rounded-0 my-2 my-sm-0"
+        [routerLink]="[ '/redirect' ]" [queryParams]="{name: inputSearch}"
+        >Search</button>
+      </div>
+    </div>
+    </div>
+  </nav>

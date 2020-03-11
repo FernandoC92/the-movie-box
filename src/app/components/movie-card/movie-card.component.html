@@ -1,0 +1,14 @@
+<div class="row">
+<div *ngFor="let item of movies.results" class="col-12 col-md-3 mt-5">
+    <div class="shadow-card p-0 m-0 card-content mx-auto">   
+        <img src="https://image.tmdb.org/t/p/w500/{{ item.poster_path }}"  width="304" height="450"  alt="">
+        <div class="d-flex justify-content-between mt-2 align-items-center">
+            <div class="px-1 ml-4">
+            <h5 class="d-inline-block text-truncate" style="max-width: 180px;">{{ item.title }}</h5>
+            <p class="text-muted">Action, Adventure, Fantasy</p>
+            </div>
+            <div class="box rating d-flex justify-content-center align-items-center mr-4"><span>{{ item.vote_average }}</span></div>
+        </div>
+    </div >
+</div>
+</div>

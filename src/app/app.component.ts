@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'the-movie-box';
+
+
+  constructor() {
+    
+  }
+
+  ngOnInit(): void {
+  
+  }
+
+
+
 }

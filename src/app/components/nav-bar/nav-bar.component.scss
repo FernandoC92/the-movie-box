@@ -1,0 +1,32 @@
+.slogan {
+    font-size: 2rem;
+}
+
+.box {
+    color: #FF0079;
+}
+
+.btn-search {
+    border-color: #FF0079;
+    color: #FF0079;
+    font-weight: 600;
+}
+
+
+.btn-search:hover {
+    background-color: #FF0079;
+    color: #fff;
+}
+
+.drop-list {
+    position: absolute;
+    display: none;
+    background-color: grayscale($color: #f9f9f9);
+}
+
+.drop-hover:hover {
+    .drop-list {
+        display: block;
+        z-index: 3000;
+    }
+}
