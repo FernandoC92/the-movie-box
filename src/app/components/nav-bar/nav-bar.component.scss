@@ -10,12 +10,10 @@
     border-color: #FF0079;
     color: #FF0079;
     font-weight: 600;
-}
-
-
-.btn-search:hover {
-    background-color: #FF0079;
-    color: #fff;
+    &:hover {
+        background-color: #FF0079;
+        color: #fff;
+    }
 }
 
 .drop-list {

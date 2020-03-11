@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieDbService } from './services/movieDb.service';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { GridMovieComponent } from './views/grid-movie/grid-movie.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { TredingComponent } from './views/treding/treding.component';
 import { TopRatedComponent } from './views/top-rated/top-rated.component';
@@ -23,7 +22,6 @@ import { FooterComponent } from './components/footer/footer.component';
   declarations: [
     AppComponent,
     NavBarComponent,
-    GridMovieComponent,
     MovieCardComponent,
     TredingComponent,
     TopRatedComponent,
