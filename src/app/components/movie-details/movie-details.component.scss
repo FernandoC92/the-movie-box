@@ -1,0 +1,32 @@
+.movie-title {
+    font-size: 2.5rem;
+}
+
+.movie-overview {
+    font-size: 1.2rem;
+}
+
+.btn-back {
+    background-color:#FF0079;
+    color: #fff;
+    font-size: 1.5rem;
+    width: 8rem;
+}
+
+.ml-custom {
+    margin-left: 2.3rem;
+}
+
+.btn-fs {
+    background-color:#fff;
+    color: #FF0079;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+}
+
+@media(max-width: 520px) {
+    .ml-custom {
+        margin-left: 2.3rem;
+    }   
+}
