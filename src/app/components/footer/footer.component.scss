@@ -1,0 +1,16 @@
+.slogan-footer {
+    font-size: 2rem;
+}
+
+.footer-height {
+    min-height: 300px;
+}
+
+.link-footer {
+    text-decoration: none;
+    transform-style: none;
+    color: #000;
+    &:hover {
+        color: #FF0079;
+    }
+}

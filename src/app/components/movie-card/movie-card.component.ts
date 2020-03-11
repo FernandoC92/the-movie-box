@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -7,15 +9,26 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MovieCardComponent implements OnInit {
 
-
+  bsModalRef: BsModalRef;
   @Input() movies: any;
 
-  constructor() { }
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      console.log('Movies card => ', this.movies)
-    }, 4000);
+
+  }
+
+  openModalWithComponent(item) {
+    const initialState = {
+      list: [
+        item.title,
+        item.vote_average,
+        item.overview,
+        item.poster_path
+      ],
+    };
+    this.bsModalRef = this.modalService.show(MovieDetailsComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Back';
   }
 
 }

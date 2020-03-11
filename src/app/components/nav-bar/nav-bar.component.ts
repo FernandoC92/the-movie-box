@@ -11,7 +11,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  
+
+ isCollapsed = false;
+
  genres = [
    {type: 'action', id: 28 },
    {type: 'adventure', id: 12 },
