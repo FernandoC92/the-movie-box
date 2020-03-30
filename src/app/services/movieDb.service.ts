@@ -10,7 +10,7 @@ export class MovieDbService {
     api_key = 'api_key=871af326ea42ac846f6291a42c4ab279';
 
     constructor(private http: HttpClient){}
-
+    
     getMostPopular(): Observable<object> {
         return this.http.get(`${this.urlDiscover}?sort_by=popularity.desc&${this.api_key}`)
     }

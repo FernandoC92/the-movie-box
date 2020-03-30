@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-redirect',
   templateUrl: './redirect.component.html',
@@ -9,34 +8,48 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class RedirectComponent implements OnInit {
 
-  constructor( private router: Router, private route: ActivatedRoute ) { }
+  constructor( 
+    private router: Router, 
+    private route: ActivatedRoute ) { }
 
-  idGenre: number;
-  name: string;
+  idGenre = this.route.snapshot.queryParams.idGenre;
+  name = this.route.snapshot.queryParams.name;
+  topRated = this.route.snapshot.queryParams.topRated;
 
   ngOnInit(): void {
-    // this.redirectPerGenre();
     this.redirectRoute();
   }
 
   redirectRoute() {
-    const id = this.name = this.route.snapshot.queryParams['id'];
-    const name = this.name = this.route.snapshot.queryParams['name'];
-    if (id) {
-      this.redirectPerGenre()
-    } else {
-      this.redirectPerName()
+
+    if (this.idGenre) {
+      this.redirectPerGenre();
+    } else if  (this.name) {
+      this.redirectPerName(); 
+    } else if  (this.topRated) {
+      this.redirectTopRated(); 
     }
+     else {
+      this.redirecPerTrend();
+    }
+
   }
 
   redirectPerGenre() {
-    this.idGenre = this.route.snapshot.queryParams.id;
-    this.router.navigate([`genre`], {queryParams: {id: this.idGenre}})
+    console.log(this.idGenre)
+    this.router.navigate([`result`], {queryParams: {idGenre: this.idGenre}})
   }
 
   redirectPerName() {
-    this.name = this.route.snapshot.queryParams['name'];
-    this.router.navigate([`/search-name`], {queryParams: { name: this.name }})
+    this.router.navigate([`/result`], {queryParams: { name: this.name }})
+  }
+
+  redirecPerTrend() {
+    this.router.navigate(['result'], {queryParams: {trend: true}});
+  }
+
+  redirectTopRated() {
+    this.router.navigate(['result'], {queryParams: {topRated: true}})
   }
 
 }

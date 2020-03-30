@@ -7,30 +7,20 @@ import { AppComponent } from './app.component';
 import { MovieDbService } from './services/movieDb.service';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
-import { TredingComponent } from './views/treding/treding.component';
-import { TopRatedComponent } from './views/top-rated/top-rated.component';
-import { GenreComponent } from './views/genre/genre.component';
-import { PerGenreComponent } from './views/per-genre/per-genre.component';
-import { RedirectComponent } from './components/redirect/redirect.component';
-import { SearchNameComponent } from './views/search-name/search-name.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { GridMoviesComponent } from './views/grid-movies/grid-movies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     MovieCardComponent,
-    TredingComponent,
-    TopRatedComponent,
-    GenreComponent,
-    PerGenreComponent,
-    RedirectComponent,
-    SearchNameComponent,
     MovieDetailsComponent,
-    FooterComponent
+    FooterComponent,
+    GridMoviesComponent
   ],
   imports: [
     BrowserModule,
