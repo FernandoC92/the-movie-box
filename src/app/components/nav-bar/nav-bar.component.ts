@@ -1,5 +1,4 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -46,7 +45,6 @@ export class NavBarComponent implements OnInit {
 
   getValue(value) {
     this.inputSearch = value;
-    console.log(this.inputSearch);
     this.searchName(this.inputSearch);
   }
 

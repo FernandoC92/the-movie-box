@@ -18,7 +18,7 @@
           <a class="nav-link" routerLink="/" >Treding <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item mx-2" routerLinkActive="active">
-          <a class="nav-link" routerLink="/top-rated">Top Rated</a>
+          <a class="nav-link" routerLink="/redirect" [queryParams]="{topRated: true}">Top Rated</a>
         </li>
         <li class="nav-item dropdown mx-2 drop-hover">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -27,7 +27,7 @@
           <div class="drop-list" aria-labelledby="navbarDropdown">
             <a class="dropdown-item"
             *ngFor="let item of genres"
-            [routerLink]="['/redirect']" [queryParams]="{id: item.id}" >{{ item.type }}</a>
+            [routerLink]="['/redirect']" [queryParams]="{idGenre: item.id}" >{{ item.type }}</a>
           </div>
         </li>
       </ul>
