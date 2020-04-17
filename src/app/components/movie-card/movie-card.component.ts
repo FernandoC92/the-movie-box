@@ -10,20 +10,11 @@ import { MovieDetailsComponent } from '../movie-details/movie-details.component'
 export class MovieCardComponent implements OnInit {
 
   bsModalRef: BsModalRef;
-  @Input() movies: any;
+  @Input() movies: object;
 
   constructor(private modalService: BsModalService) { }
 
   ngOnInit(): void {
-
-    console.log(this.movies)
-
-    setTimeout(() => {
-      console.log('Hello world!')
-      for (let index = 0; index < this.movies.results.length; index++) {
-        const element = this.movies.results[index].genre_ids;
-      }
-    }, 3000);
 
   }
 
@@ -31,13 +22,81 @@ export class MovieCardComponent implements OnInit {
     const initialState = {
       list: [
         item.title,
-        item.vote_average,
+        item.voteAverage,
         item.overview,
-        item.poster_path
+        item.posterPath
       ],
     };
     this.bsModalRef = this.modalService.show(MovieDetailsComponent, { initialState });
     this.bsModalRef.content.closeBtnName = 'Back';
+  }
+
+  arrayForString2(arr: Array<any>) {
+      arr = arr.map(element => {
+      switch (element) {
+        case 28:
+          return ' Action'
+          break;
+        case 878:
+          return ' Science Fiction'
+          break;
+        case 12:
+          return ' Adventure'
+          break;
+        case 16:
+          return ' Animation'
+          break;
+        case 35:
+          return ' Comedy'
+          break;
+        case 80:
+          return ' Crime'
+          break;
+        case 99:
+          return ' Documentary'
+          break;
+        case 18:
+          return ' Drama'
+          break;
+        case 14:
+          return ' Fantasy'
+          break;
+        case 36:
+          return ' History'
+          break;
+        case 27:
+          return ' Horror'
+          break;
+        case 10402:
+          return ' Music'
+          break;
+        case 9648:
+          return ' Mystery'
+          break;
+        case 10749:
+          return ' Romance'
+          break;
+          case 10751:
+          return ' Family'
+          break;
+        case 10770:
+          return ' TV Movie'
+          break;
+        case 53:
+          return ' Thriller'
+          break;
+        case 10752:
+          return ' War'
+          break;
+        case 37:
+          return ' Western'
+          break;
+        default: 'No have tag'
+          break;
+      }
+    })
+    
+    return arr
   }
 
   arrayForString(arr): string {

@@ -36,8 +36,7 @@ export class RedirectComponent implements OnInit {
   }
 
   redirectPerGenre() {
-    console.log(this.idGenre)
-    this.router.navigate([`result`], {queryParams: {idGenre: this.idGenre}})
+    this.router.navigate([`/result`], {queryParams: {idGenre: this.idGenre}})
   }
 
   redirectPerName() {
@@ -45,11 +44,11 @@ export class RedirectComponent implements OnInit {
   }
 
   redirecPerTrend() {
-    this.router.navigate(['result'], {queryParams: {trend: true}});
+    this.router.navigate(['/result'], {queryParams: { trend: true }});
   }
 
   redirectTopRated() {
-    this.router.navigate(['result'], {queryParams: {topRated: true}})
+    this.router.navigate(['/result'], {queryParams: { topRated: true }})
   }
 
 }

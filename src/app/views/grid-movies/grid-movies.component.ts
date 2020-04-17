@@ -26,7 +26,9 @@ export class GridMoviesComponent implements OnInit {
   selectService() {
       if (this.trend) {
         this.movieDbService.getMostPopular().subscribe(
-          data => this.movies = data
+          data => {
+            this.movies = data
+          } 
         ) 
       } if (this.genre) {
           this.movieDbService.getPerGenre(this.genre).subscribe(
